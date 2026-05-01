@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParkTrooper LLC â Veteran-Owned Parking Management | Austin, TX</title>
+  <meta name="description" content="ParkTrooper LLC is a veteran-owned parking lot management company in Austin, TX. Offering hourly, daily, and monthly parking. Secure, affordable, and professionally managed." />
+  <style>
+    :root {
+      --navy: #1B3A6B;
+      --navy-dark: #122850;
+      --gold: #C9A84C;
+      --gold-light: #e8c96b;
+      --white: #ffffff;
+      --off-white: #f7f8fa;
+      --gray: #6b7280;
+      --text: #1a1a2e;
+      --border: #e2e8f0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ââ NAV ââ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo-star {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo-text .brand {
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-logo-text .tagline {
+      color: rgba(255,255,255,0.65);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+    /* ââ HERO ââ */
+    #home {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #2a5298 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 80px,
+        rgba(201,168,76,0.04) 80px,
+        rgba(201,168,76,0.04) 81px
+      );
+    }
+
+    .hero-content { position: relative; max-width: 800px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge span { font-size: 16px; }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      margin: 0 auto 44px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.5);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      margin-top: 64px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ââ SECTIONS ââ */
+    section { padding: 96px 24px; }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 580px;
+      margin-bottom: 56px;
+    }
+
+    /* ââ SERVICES ââ */
+    #services { background: var(--off-white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(27,58,107,0.12);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(27,58,107,0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .service-card .price-tag {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(201,168,76,0.12);
+      color: #8a6a10;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* ââ MONTHLY SIGNUP ââ */
+    #monthly { background: var(--white); }
+
+    .signup-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .signup-wrapper { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .signup-benefits { padding-top: 8px; }
+
+    .benefit-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .benefit-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: var(--navy);
+      color: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .benefit-text h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .benefit-text p {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .signup-form {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+    }
+
+    .signup-form h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .signup-form .form-sub {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(27,58,107,0.1);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s;
+      font-family: inherit;
+    }
+
+    .btn-submit:hover { background: var(--navy-dark); transform: translateY(-1px); }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 14px;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    .form-success .check {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .form-success h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .form-success p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* ââ ABOUT ââ */
+    #about { background: var(--navy); }
+
+    #about .section-label { color: var(--gold); }
+    #about h2 { color: var(--white); }
+    #about .section-intro { color: rgba(255,255,255,0.7); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-stats { gap: 32px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .about-text p {
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .about-highlight {
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin: 32px 0;
+    }
+
+    .about-highlight p {
+      color: rgba(255,255,255,0.9) !important;
+      font-style: italic;
+      font-size: 1.05rem !important;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .about-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .about-card .icon { font-size: 28px; margin-bottom: 10px; }
+
+    .about-card h4 {
+      color: var(--gold);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .about-card p {
+      color: rgba(255,255,255,0.6) !important;
+      font-size: 0.82rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* ââ CONTACT ââ */
+    #contact { background: var(--off-white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: var(--navy);
+      color: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .contact-detail h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-detail p, .contact-detail a {
+      color: var(--gray);
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .contact-detail a:hover { color: var(--navy); }
+
+    .contact-form-simple {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 36px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .contact-form-simple h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    /* ââ FOOTER ââ */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 13px;
+    }
+
+    footer strong { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .vet-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ââ NAVIGATION ââ -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <span class="nav-logo-star">ð¿</span>
+    <div class="nav-logo-text">
+      <span class="brand">PARKTROOPER</span>
+      <span class="tagline">Austin, TX</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#monthly">Monthly Parking</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- ââ HERO ââ -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-badge"><span>â­</span> Veteran-Owned &amp; Operated â Austin, TX</div>
+    <h1>Professional Parking<br/>Management You Can <em>Trust</em></h1>
+    <p class="hero-sub">ParkTrooper LLC delivers secure, affordable, and professionally managed parking in the Austin metro area â built on military values of discipline, reliability, and service.</p>
+    <div class="hero-buttons">
+      <a href="#monthly" class="btn-primary">Sign Up for Monthly Parking</a>
+      <a href="#services" class="btn-outline">View Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Veteran-Owned</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Access</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">ATX</div>
+        <div class="stat-label">Based &amp; Operated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââ SERVICES ââ -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">What We Offer</div>
+    <h2>Parking Solutions for Every Need</h2>
+    <p class="section-intro">Whether you need a spot for the afternoon or a reserved space every month, ParkTrooper has you covered with flexible, transparent pricing.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">ð</div>
+        <h3>Hourly Parking</h3>
+        <p>No reservations needed. Pull in, park, and pay by the hour with simple, clearly posted rates. Perfect for downtown errands, appointments, or events.</p>
+        <span class="price-tag">Pay as you go</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">ð</div>
+        <h3>Daily Parking</h3>
+        <p>Flat-rate all-day parking at a price that makes sense. Great for commuters, remote workers, or anyone who needs a full day without watching the clock.</p>
+        <span class="price-tag">Flat daily rate</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">ðï¸</div>
+        <h3>Monthly Reserved Parking</h3>
+        <p>Lock in your spot with a monthly contract. Guaranteed reserved space, no hunting for parking every day â just drive in and you're done.</p>
+        <span class="price-tag">Best value</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">ð¢</div>
+        <h3>Commercial Lot Management</h3>
+        <p>Property owners: let ParkTrooper manage your underutilized lot. We handle signage, enforcement, payment collection, and tenant relations.</p>
+        <span class="price-tag">Revenue partnership</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">ð</div>
+        <h3>Secure &amp; Monitored</h3>
+        <p>All ParkTrooper facilities are clearly marked, well-lit, and monitored. Unauthorized vehicles are towed by our licensed TDLR-authorized towing partner.</p>
+        <span class="price-tag">Always enforced</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">ð±</div>
+        <h3>Easy Mobile Payments</h3>
+        <p>Pay by phone with ParkMobile or PayByPhone â no app download required. Credit, debit, Apple Pay, and Google Pay accepted at all locations.</p>
+        <span class="price-tag">Contactless &amp; easy</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ââ MONTHLY SIGNUP ââ -->
+<section id="monthly">
+  <div class="container">
+    <div class="signup-wrapper">
+
+      <div class="signup-benefits">
+        <div class="section-label">Monthly Parking</div>
+        <h2>Reserve Your Spot Today</h2>
+        <p class="section-intro" style="margin-bottom:40px;">Stop circling the block every morning. A ParkTrooper monthly contract gives you a guaranteed space, hassle-free billing, and priority service.</p>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">â</div>
+          <div class="benefit-text">
+            <h4>Guaranteed Reserved Space</h4>
+            <p>Your spot is yours â every day, all month, no competition.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">ð³</div>
+          <div class="benefit-text">
+            <h4>Simple Monthly Billing</h4>
+            <p>One flat payment per month. No daily fees, no surprises.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">ð</div>
+          <div class="benefit-text">
+            <h4>24/7 Access</h4>
+            <p>Early morning, late night â your access doesn't stop when the office closes.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">â­</div>
+          <div class="benefit-text">
+            <h4>Veteran-Owned &amp; Local</h4>
+            <p>When you park with ParkTrooper, you're supporting a veteran-owned Austin small business.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="signup-form" id="signup-form-wrapper">
+        <h3>Monthly Parking Application</h3>
+        <p class="form-sub">Fill out the form below and we'll contact you within 1 business day to confirm availability and finalize your contract.</p>
+
+        <form id="parkingForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="fname" required placeholder="Najee" />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name *</label>
+              <input type="text" id="lname" name="lname" required placeholder="Smith" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="you@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(512) 555-0100" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vehicle_make">Vehicle Make *</label>
+              <input type="text" id="vehicle_make" name="vehicle_make" required placeholder="Toyota" />
+            </div>
+            <div class="form-group">
+              <label for="vehicle_model">Model &amp; Year *</label>
+              <input type="text" id="vehicle_model" name="vehicle_model" required placeholder="Camry 2021" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="license_plate">License Plate *</label>
+            <input type="text" id="license_plate" name="license_plate" required placeholder="TX â ABC1234" />
+          </div>
+
+          <div class="form-group">
+            <label for="start_date">Desired Start Date *</label>
+            <input type="date" id="start_date" name="start_date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="location_pref">Location Preference</label>
+            <select id="location_pref" name="location_pref">
+              <option value="">â Select a location â</option>
+              <option value="east_austin">East Austin / E. Cesar Chavez</option>
+              <option value="downtown">Downtown Austin</option>
+              <option value="south_austin">South Austin</option>
+              <option value="any">Any available location</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Additional Notes (Optional)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Any special requirements, accessibility needs, or questions..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Application â</button>
+          <p class="form-note">ð Your information is kept private. We'll never share or sell your data.</p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="check">â</div>
+          <h4>Application Received!</h4>
+          <p>Thanks for your interest in monthly parking with ParkTrooper LLC. We'll reach out to <span id="confirm-email"></span> within 1 business day to confirm your spot and send your contract.</p>
+          <br/>
+          <p style="color:#1B3A6B;font-weight:600;">Questions? Email us at lecque@parktrooper.com</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ââ ABOUT ââ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">About ParkTrooper</div>
+        <h2 style="color:white;">Built on Service.<br/>Committed to Austin.</h2>
+        <p>ParkTrooper LLC was founded by Najee Lecque, a U.S. military veteran with a mission to bring disciplined, professional parking management to the Austin, Texas market.</p>
+        <p>After years of service, Najee applied that same commitment to showing up, doing the job right, and never cutting corners to building a business the Austin community can rely on.</p>
+        <div class="about-highlight">
+          <p>"The same discipline that made me effective in the military is what drives every decision at ParkTrooper. Your parking experience should be simple, secure, and dependable â every single time."</p>
+        </div>
+        <p>ParkTrooper LLC is a registered Texas LLC (SOS File No. 806558752), fully insured, and TDLR-compliant.</p>
+      </div>
+
+      <div class="about-cards">
+        <div class="about-card">
+          <div class="icon">ðï¸</div>
+          <h4>Veteran-Owned</h4>
+          <p>Proudly owned and operated by a U.S. military veteran</p>
+        </div>
+        <div class="about-card">
+          <div class="icon">ðï¸</div>
+          <h4>Texas Registered</h4>
+          <p>Active Texas LLC in good standing with the Secretary of State</p>
+        </div>
+        <div class="about-card">
+          <div class="icon">ð</div>
+          <h4>TDLR Compliant</h4>
+          <p>All operations and towing partners fully licensed and compliant</p>
+        </div>
+        <div class="about-card">
+          <div class="icon">ð¤</div>
+          <h4>Austin Local</h4>
+          <p>Born, built, and invested in the Austin community</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââ CONTACT ââ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">Get In Touch</div>
+        <h2>Let's Talk Parking</h2>
+        <p class="section-intro">Have questions about monthly rates, lot management partnerships, or availability? Reach out â we respond fast.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">âï¸</div>
+          <div class="contact-detail">
+            <h4>Email</h4>
+            <a href="mailto:lecque@parktrooper.com">lecque@parktrooper.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">ð</div>
+          <div class="contact-detail">
+            <h4>Service Area</h4>
+            <p>Austin, TX Metro Area</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">ð</div>
+          <div class="contact-detail">
+            <h4>Response Time</h4>
+            <p>Within 1 business day</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">ð</div>
+          <div class="contact-detail">
+            <h4>Website</h4>
+            <a href="https://parktrooper.com">parktrooper.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-simple">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" onsubmit="handleContact(event)">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" required placeholder="Full name" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" required placeholder="you@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option>Monthly parking inquiry</option>
+              <option>Lot management partnership</option>
+              <option>Rates &amp; availability</option>
+              <option>General question</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" required placeholder="How can we help you?"></textarea>
+          </div>
+          <button type="submit" class="btn-submit" style="background:var(--gold);color:var(--navy);">Send Message â</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââ FOOTER ââ -->
+<footer>
+  <div class="vet-badge">â­ Veteran-Owned Small Business</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#monthly">Monthly Parking</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p><strong>ParkTrooper LLC</strong> &mdash; Austin, TX &nbsp;|&nbsp; lecque@parktrooper.com &nbsp;|&nbsp; Texas LLC No. 806558752</p>
+  <p style="margin-top:8px;">&copy; 2026 ParkTrooper LLC. All rights reserved. Veteran-Owned &amp; Operated.</p>
+</footer>
+
+<script>
+  // Monthly parking form submission
+  function handleSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    document.getElementById('confirm-email').textContent = email;
+    document.getElementById('parkingForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+
+    // In production, replace this with a real form service like Formspree, Netlify Forms, or EmailJS
+    console.log('Form submitted â integrate with Formspree or EmailJS to receive emails');
+  }
+
+  // Contact form
+  function handleContact(e) {
+    e.preventDefault();
+    e.target.innerHTML = '<div style="text-align:center;padding:32px 0;"><div style="font-size:40px;margin-bottom:12px;">â</div><h4 style="color:#1B3A6B;font-size:1.1rem;font-weight:700;">Message Sent!</h4><p style="color:#6b7280;margin-top:8px;">We\'ll get back to you within 1 business day.</p></div>';
+  }
+
+  // Smooth active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--gold)'
+        : 'rgba(255,255,255,0.85)';
+    });
+  });
+</script>
+
+</body>
+</html>

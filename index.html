@@ -22,13 +22,31 @@
   <meta property="og:description" content="Secure, affordable, and professionally managed parking in Austin, TX. Monthly contracts, hourly, and daily parking. Veteran-owned &amp; operated." />
   <meta property="og:site_name" content="ParkTrooper LLC" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg" />
+
+  <!-- Social Preview â create a 1200Ã630 branded PNG saved as og-image.png in the repo root -->
+  <meta property="og:image" content="https://parktrooper.github.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ParkTrooper LLC &#8212; Veteran-Owned Parking | Austin, TX" />
   <meta name="twitter:description" content="Secure, affordable, and professionally managed parking in Austin, TX. Veteran-owned &amp; operated." />
+  <meta name="twitter:image" content="https://parktrooper.github.io/og-image.png" />
 
-  <!-- Google Search Console verification (add your code from Search Console below) -->
-  <!-- <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" /> -->
+  <!-- Google Analytics 4 â create a free property at analytics.google.com, then replace G-XXXXXXXXXX below and uncomment -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
 
   <!-- JSON-LD Local Business Schema -->
   <script type="application/ld+json">
@@ -38,8 +56,8 @@
     "name": "ParkTrooper LLC",
     "description": "Veteran-owned parking lot management company in Austin, TX offering hourly, daily, and monthly reserved parking.",
     "url": "https://parktrooper.github.io/",
-    "email": "lecque@parktrooper.com",
-    "sameAs": ["https://www.instagram.com/parktrooper"],
+    "email": "support@parktrooper.com",
+    "sameAs": ["https://www.instagram.com/parktrooperllc/"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Austin",
@@ -715,7 +733,7 @@
     /* &#9472;&#9472; HERO LOGO &#9472;&#9472; */
     .hero-logo-wrap {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       margin-bottom: 28px;
     }
     .hero-logo-svg { filter: drop-shadow(0 4px 18px rgba(201,168,76,0.35)); }
@@ -749,6 +767,47 @@
       transition: color 0.2s;
     }
     .footer-social a:hover { color: var(--gold); }
+
+    /* &#9472;&#9472; HAMBURGER MENU &#9472;&#9472; */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 26px;
+      cursor: pointer;
+      padding: 4px 10px;
+      line-height: 1;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .nav-hamburger:hover { background: rgba(255,255,255,0.12); }
+
+    @media (max-width: 768px) {
+      .nav-hamburger { display: block; }
+      nav { flex-wrap: wrap; height: auto; min-height: 68px; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 8px 0 20px;
+        gap: 0;
+        border-top: 1px solid rgba(255,255,255,0.12);
+      }
+      .nav-links.open { display: flex !important; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block;
+        padding: 13px 4px;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .nav-cta {
+        margin-top: 14px !important;
+        padding: 10px 20px !important;
+        display: inline-block !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -781,12 +840,13 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#monthly">Monthly Parking</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="https://www.instagram.com/parktrooper" target="_blank" rel="noopener" class="nav-instagram" aria-label="ParkTrooper on Instagram">
+    <li><a href="https://www.instagram.com/parktrooperllc/" target="_blank" rel="noopener" class="nav-instagram" aria-label="ParkTrooper on Instagram">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
       @parktrooper
     </a></li>
     <li><a href="#contact" class="nav-cta">Contact Us</a></li>
   </ul>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Open navigation menu" aria-expanded="false">&#9776;</button>
 </nav>
 
 <!-- &#9472;&#9472; HERO &#9472;&#9472; -->
@@ -942,7 +1002,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name *</label>
-              <input type="text" id="fname" name="fname" required placeholder="Najee" />
+              <input type="text" id="fname" name="fname" required placeholder="John" />
             </div>
             <div class="form-group">
               <label for="lname">Last Name *</label>
@@ -1006,7 +1066,7 @@
           <h4>Application Received!</h4>
           <p>Thanks for your interest in monthly parking with ParkTrooper LLC. We'll reach out to <span id="confirm-email"></span> within 1 business day to confirm your spot and send your contract.</p>
           <br/>
-          <p style="color:#1B3A6B;font-weight:600;">Questions? Email us at lecque@parktrooper.com</p>
+          <p style="color:#1B3A6B;font-weight:600;">Questions? Email us at support@parktrooper.com</p>
         </div>
       </div>
 
@@ -1068,7 +1128,7 @@
           <div class="contact-icon">&#9993;&#65039;</div>
           <div class="contact-detail">
             <h4>Email</h4>
-            <a href="mailto:lecque@parktrooper.com">lecque@parktrooper.com</a>
+            <a href="mailto:support@parktrooper.com">support@parktrooper.com</a>
           </div>
         </div>
 
@@ -1092,7 +1152,7 @@
           <div class="contact-icon">&#127760;</div>
           <div class="contact-detail">
             <h4>Website</h4>
-            <a href="https://parktrooper.com">parktrooper.com</a>
+            <a href="https://parktrooper.github.io">parktrooper.github.io</a>
           </div>
         </div>
       </div>
@@ -1101,16 +1161,16 @@
         <h3>Send Us a Message</h3>
         <form id="contactForm" onsubmit="handleContact(event)">
           <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" required placeholder="Full name" />
+            <label for="contact_name">Your Name</label>
+            <input type="text" id="contact_name" name="name" required placeholder="Full name" />
           </div>
           <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" required placeholder="you@email.com" />
+            <label for="contact_email">Email Address</label>
+            <input type="email" id="contact_email" name="email" required placeholder="you@email.com" />
           </div>
           <div class="form-group">
-            <label>Subject</label>
-            <select>
+            <label for="contact_subject">Subject</label>
+            <select id="contact_subject" name="subject">
               <option>Monthly parking inquiry</option>
               <option>Lot management partnership</option>
               <option>Rates &amp; availability</option>
@@ -1118,8 +1178,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Message</label>
-            <textarea rows="4" required placeholder="How can we help you?"></textarea>
+            <label for="contact_message">Message</label>
+            <textarea id="contact_message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
           </div>
           <button type="submit" class="btn-submit" style="background:var(--gold);color:var(--navy);">Send Message &#8594;</button>
         </form>
@@ -1139,13 +1199,13 @@
     <a href="#contact">Contact</a>
   </div>
   <div class="footer-social">
-    <a href="https://www.instagram.com/parktrooper" target="_blank" rel="noopener" aria-label="ParkTrooper on Instagram">
+    <a href="https://www.instagram.com/parktrooperllc/" target="_blank" rel="noopener" aria-label="ParkTrooper on Instagram">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
       @parktrooper
     </a>
-    <a href="mailto:lecque@parktrooper.com" aria-label="Email ParkTrooper">
+    <a href="mailto:support@parktrooper.com" aria-label="Email ParkTrooper">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      lecque@parktrooper.com
+      support@parktrooper.com
     </a>
   </div>
   <p><strong>ParkTrooper LLC</strong> &mdash; Austin, TX &nbsp;|&nbsp; Texas LLC No. 806558752</p>
@@ -1153,25 +1213,81 @@
 </footer>
 
 <script>
-  // Monthly parking form submission
-  function handleSubmit(e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    document.getElementById('confirm-email').textContent = email;
-    document.getElementById('parkingForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+  // ââ FORM ENDPOINTS ââ
+  // Sign up free at formspree.io â create two forms â paste the unique endpoint IDs below
+  const FORMSPREE_MONTHLY = 'https://formspree.io/f/REPLACE_WITH_YOUR_ID';
+  const FORMSPREE_CONTACT = 'https://formspree.io/f/REPLACE_WITH_YOUR_ID';
 
-    // In production, replace this with a real form service like Formspree, Netlify Forms, or EmailJS
-    console.log('Form submitted &#8212; integrate with Formspree or EmailJS to receive emails');
+  // Monthly parking application
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('parkingForm');
+    const btn  = form.querySelector('.btn-submit');
+    const data = Object.fromEntries(new FormData(form));
+
+    btn.textContent = 'Submittingâ¦';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(FORMSPREE_MONTHLY, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error('Server error');
+      document.getElementById('confirm-email').textContent = data.email || '';
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } catch {
+      btn.textContent = 'Submit Application â';
+      btn.disabled = false;
+      alert('There was a problem submitting your application.\nPlease email us directly at support@parktrooper.com');
+    }
   }
 
   // Contact form
-  function handleContact(e) {
+  async function handleContact(e) {
     e.preventDefault();
-    e.target.innerHTML = '<div style="text-align:center;padding:32px 0;"><div style="font-size:40px;margin-bottom:12px;">&#9989;</div><h4 style="color:#1B3A6B;font-size:1.1rem;font-weight:700;">Message Sent!</h4><p style="color:#6b7280;margin-top:8px;">We\'ll get back to you within 1 business day.</p></div>';
+    const form = e.target;
+    const btn  = form.querySelector('.btn-submit');
+    const data = Object.fromEntries(new FormData(form));
+
+    btn.textContent = 'Sendingâ¦';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(FORMSPREE_CONTACT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error('Server error');
+      form.innerHTML = '<div style="text-align:center;padding:32px 0;"><div style="font-size:40px;margin-bottom:12px;">&#9989;</div><h4 style="color:#1B3A6B;font-size:1.1rem;font-weight:700;">Message Sent!</h4><p style="color:#6b7280;margin-top:8px;">We\'ll get back to you within 1 business day.</p></div>';
+    } catch {
+      btn.textContent = 'Send Message â';
+      btn.disabled = false;
+      alert('There was a problem sending your message.\nPlease email us directly at support@parktrooper.com');
+    }
   }
 
-  // Smooth active nav highlighting
+  // Hamburger menu toggle
+  function toggleNav() {
+    const links = document.querySelector('.nav-links');
+    const btn   = document.querySelector('.nav-hamburger');
+    const open  = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.innerHTML = open ? '&#10005;' : '&#9776;';
+  }
+  document.querySelectorAll('.nav-links a').forEach(a =>
+    a.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('open');
+      const btn = document.querySelector('.nav-hamburger');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '&#9776;';
+    })
+  );
+
+  // Active nav link highlighting on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -1185,8 +1301,8 @@
         ? 'var(--gold)'
         : 'rgba(255,255,255,0.85)';
     });
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>

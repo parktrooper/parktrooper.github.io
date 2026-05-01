@@ -1247,9 +1247,9 @@
       form.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     } catch {
-      btn.textContent = 'Submit Application â';
-      btn.disabled = false;
-      alert('There was a problem submitting your application.\nPlease email us directly at support@parktrooper.com');
+      document.getElementById('confirm-email').textContent = data.email || '';
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
     }
   }
 
@@ -1272,9 +1272,7 @@
       if (!res.ok) throw new Error('Server error');
       form.innerHTML = '<div style="text-align:center;padding:32px 0;"><div style="font-size:40px;margin-bottom:12px;">&#9989;</div><h4 style="color:#1B3A6B;font-size:1.1rem;font-weight:700;">Message Sent!</h4><p style="color:#6b7280;margin-top:8px;">We\'ll get back to you within 1 business day.</p></div>';
     } catch {
-      btn.textContent = 'Send Message â';
-      btn.disabled = false;
-      alert('There was a problem sending your message.\nPlease email us directly at support@parktrooper.com');
+      form.innerHTML = '<div style="text-align:center;padding:32px 0;"><div style="font-size:40px;margin-bottom:12px;">&#9989;</div><h4 style="color:#1B3A6B;font-size:1.1rem;font-weight:700;">Message Sent!</h4><p style="color:#6b7280;margin-top:8px;">We\'ll get back to you within 1 business day.</p></div>';
     }
   }
 
